@@ -25,11 +25,18 @@ function activate(context) {
       vscode.window
         .showInputBox({ prompt: "Hex Color", placeHolder: "#FFFFFF" })
         .then((hexInput) => {
-          const tailwindColor = hexToTailwind(hexInput).tailwind;
-          if (tailwindColor) {
-            vscode.env.clipboard.writeText(tailwindColor);
+          try {
+            const { tailwind, deltaE } = hexToTailwind(hexInput);
+            if (tailwind) {
+              vscode.env.clipboard.writeText(tailwind);
+              vscode.window.showInformationMessage(
+                `Copied ${tailwind} with a deltaE of ${deltaE} to clipboard!`
+              );
+            }
+          } catch (e) {
+            console.log(e);
             vscode.window.showInformationMessage(
-              `Copied ${tailwindColor} to clipboard!`
+              "Hex to Tailwind: Invalid input."
             );
           }
         });
