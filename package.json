@@ -1,16 +1,37 @@
 {
     "name": "hex-to-tailwind",
     "displayName": "hex-to-tailwind",
-    "description": "Convert hex to Tailwind preset",
-    "version": "0.0.1",
+    "description": "Convert hex to the closest Tailwind preset using the Delta E algorithm.",
+    "version": "1.0.0",
+    "publisher": "TedisAgolli",
+    "author": {
+        "name": "Tedis Agolli",
+        "email": "hey@tedis.me",
+        "url": "https://tedis.me"
+    },
+    "bugs": {
+        "email": "hey@tedis.me",
+        "url": "https://github.com/TedisAgolli/hex-to-tailwind-vscode/issues"
+    },
+    "homepage": "https://github.com/TedisAgolli/hex-to-tailwind-vscode",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TedisAgolli/hex-to-tailwind-vscode.git"
+    },
     "engines": {
         "vscode": "^1.52.0"
     },
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "css",
+        "tailwind",
+        "hex",
+        "convert"
+    ],
     "activationEvents": [
-        "onCommand:hex-to-tailwind.hex-totailwind"
+        "onCommand:hex-to-tailwind.hex-to-tailwind"
     ],
     "main": "./extension.js",
     "contributes": {
@@ -21,6 +42,7 @@
             }
         ]
     },
+    "icon": "screenshots/hex-to-tailwind-icon.png",
     "scripts": {
         "lint": "eslint .",
         "pretest": "npm run lint",
