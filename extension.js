@@ -26,6 +26,7 @@ function activate(context) {
         .showInputBox({ prompt: "Hex Color", placeHolder: "#FFFFFF" })
         .then((hexInput) => {
           try {
+            hexInput = hexInput.startsWith("#") ? hexInput : "#" + hexInput;
             const { tailwind, deltaE } = hexToTailwind(hexInput);
             if (tailwind) {
               vscode.env.clipboard.writeText(tailwind);

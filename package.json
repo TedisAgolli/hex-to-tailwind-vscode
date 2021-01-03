@@ -1,8 +1,8 @@
 {
     "name": "hex-to-tailwind",
-    "displayName": "hex-to-tailwind",
+    "displayName": "Hex to Tailwind",
     "description": "Convert hex to the closest Tailwind preset using the Delta E algorithm.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "publisher": "TedisAgolli",
     "author": {
         "name": "Tedis Agolli",
